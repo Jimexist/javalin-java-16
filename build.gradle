@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'idea'
     id "com.github.johnrengelman.shadow" version "6.1.0"
+    id "com.diffplug.spotless" version "5.11.0"
 }
 
 java {
@@ -17,6 +18,12 @@ mainClassName = 'me.jiayu.javalin.java.App'
 
 repositories {
     mavenCentral()
+}
+
+spotless {
+    java {
+        googleJavaFormat('1.9')
+    }
 }
 
 dependencies {
